@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+
+<StackPane prefHeight="537.0" prefWidth="735.0"
+ fx:controller="mum.mpp.carrental.controller.CustomerListController" 
+ xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <GridPane>
+        <columnConstraints>
+            <ColumnConstraints hgrow="NEVER" maxWidth="50.0" minWidth="50.0" prefWidth="50.0" />
+            <ColumnConstraints hgrow="NEVER" maxWidth="150.0" minWidth="150.0" prefWidth="150.0" />
+           <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="150.0" prefWidth="150.0" />
+           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="NEVER" maxWidth="30.0" minWidth="30.0" prefWidth="30.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="NEVER" />
+          <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="NEVER" />
+          <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="NEVER" />
+          <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="NEVER" />
+          <RowConstraints maxHeight="464.0" minHeight="10.0" prefHeight="384.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="NEVER" />
+        </rowConstraints>
+         <StackPane.margin>
+            <Insets top="5.0" />
+         </StackPane.margin>
+         <children>
+            <Label layoutX="14.0" layoutY="14.0" text="Customers" GridPane.columnIndex="1" GridPane.rowIndex="2" 
+            AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="5.0" style="-fx-font-weight: bold">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtSearch" GridPane.columnIndex="1" GridPane.rowIndex="3"  GridPane.columnSpan="2" />
+            <Button mnemonicParsing="false" text="Search" GridPane.columnIndex="3" GridPane.rowIndex="3" onAction="#handleSearch">
+               <GridPane.margin>
+                  <Insets left="15.0" />
+               </GridPane.margin>
+            </Button>
+            <Button fx:id="btnClearSearch" mnemonicParsing="false" text="X" GridPane.columnIndex="0" GridPane.rowIndex="3" onAction="#handleClearSearch">
+               <GridPane.margin>
+                  <Insets left="15.0" />
+               </GridPane.margin>
+            </Button>
+            <TableView fx:id="tblCustomers" GridPane.hgrow="ALWAYS" 
+           GridPane.vgrow="ALWAYS"  prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.columnSpan="4" GridPane.rowIndex="4">
+              <columnResizePolicy><TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/></columnResizePolicy>
+                  <columns>                    
+		          <TableColumn prefWidth="139.0" text="Username" >			          
+	                <cellValueFactory>
+		                <PropertyValueFactory property="userName" />
+		            </cellValueFactory>
+		          </TableColumn>
+		          <TableColumn minWidth="0.0" prefWidth="183.0" text="Full Name" >			          	          
+	                <cellValueFactory>
+		                <PropertyValueFactory property="fullName" />
+		            </cellValueFactory>
+		          </TableColumn>
+		            <TableColumn minWidth="0.0" prefWidth="148.0" text="Phone Number"  >			          	          
+		                <cellValueFactory>
+			                <PropertyValueFactory property="phoneNumber" />
+			            </cellValueFactory>
+			          </TableColumn>   
+		            <TableColumn minWidth="0.0" prefWidth="546.0" text="Address"  >			          	          
+		                <cellValueFactory>
+			                <PropertyValueFactory property="address" />
+			            </cellValueFactory>
+			          </TableColumn>        
+              </columns>
+            </TableView>
+            <Button mnemonicParsing="false" text="Create Customer" onAction="#handleCreateCustomer" GridPane.columnIndex="1" GridPane.rowIndex="5">
+               <GridPane.margin>
+                  <Insets left="15.0" />
+               </GridPane.margin>
+            </Button>
+            <Button mnemonicParsing="false" text="Delete Customer" onAction="#handleDeleteCustomer" GridPane.columnIndex="2" GridPane.rowIndex="5">
+               <GridPane.margin>
+                  <Insets left="15.0" />
+               </GridPane.margin>
+            </Button>
+            <Text fx:id="messageText" GridPane.columnIndex="3" GridPane.rowIndex="5"></Text>
+         </children>
+      </GridPane>
+   </children>
+</StackPane>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<StackPane prefHeight="725.0" prefWidth="735.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <GridPane>
+        <columnConstraints>
+            <ColumnConstraints hgrow="NEVER" maxWidth="30.0" minWidth="30.0" prefWidth="30.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="NEVER" maxWidth="30.0" minWidth="30.0" prefWidth="30.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints fillHeight="false" maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="NEVER" />
+          <RowConstraints fillHeight="false" maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="NEVER" />
+            <RowConstraints fillHeight="false" maxHeight="367.0" minHeight="280.0" prefHeight="367.0" vgrow="NEVER" />
+          <RowConstraints fillHeight="false" maxHeight="371.0" minHeight="34.0" prefHeight="34.0" vgrow="NEVER" />
+          <RowConstraints maxHeight="464.0" minHeight="10.0" prefHeight="144.0" vgrow="ALWAYS" />
+            <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="NEVER" />
+        </rowConstraints>
+         <StackPane.margin>
+            <Insets top="20.0" />
+         </StackPane.margin>
+         <children>
+            <Label text="Customer" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Button mnemonicParsing="false" text="Search" GridPane.columnIndex="2" GridPane.rowIndex="3">
+               <GridPane.margin>
+                  <Insets left="15.0" />
+               </GridPane.margin>
+            </Button>
+            <TableView prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="4">
+              <columns>
+                <TableColumn prefWidth="75.0" text="Customer ID" />
+                <TableColumn prefWidth="98.0" text="First Name" />
+                  <TableColumn prefWidth="99.0" text="Last Name" />
+                  <TableColumn prefWidth="111.0" text="Phone Number" />
+              </columns>
+            </TableView>
+            <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="5">
+               <children>
+                  <Button mnemonicParsing="false" text="Delete" />
+               </children>
+            </HBox>
+            <GridPane prefHeight="375.0" prefWidth="675.0" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="2">
+              <columnConstraints>
+                <ColumnConstraints hgrow="NEVER" maxWidth="167.0" minWidth="167.0" prefWidth="167.0" />
+                  <ColumnConstraints fillWidth="false" hgrow="NEVER" maxWidth="15.0" minWidth="15.0" prefWidth="15.0" />
+                  <ColumnConstraints fillWidth="false" hgrow="NEVER" maxWidth="120.0" minWidth="120.0" prefWidth="120.0" />
+                <ColumnConstraints fillWidth="false" hgrow="NEVER" maxWidth="342.0" minWidth="200.0" prefWidth="283.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="517.0" minWidth="10.0" prefWidth="90.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints fillHeight="false" maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="NEVER" />
+                  <RowConstraints fillHeight="false" maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="NEVER" />
+                  <RowConstraints fillHeight="false" maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="NEVER" />
+                  <RowConstraints fillHeight="false" maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="NEVER" />
+                <RowConstraints fillHeight="false" maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="NEVER" />
+                <RowConstraints fillHeight="false" maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="NEVER" />
+                  <RowConstraints fillHeight="false" maxHeight="70.0" minHeight="70.0" prefHeight="70.0" vgrow="NEVER" />
+                  <RowConstraints fillHeight="false" maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="NEVER" />
+                  <RowConstraints fillHeight="false" maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="NEVER" />
+                  <RowConstraints fillHeight="false" maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="NEVER" />
+                  <RowConstraints fillHeight="false" maxHeight="500.0" minHeight="10.0" prefHeight="38.0" vgrow="ALWAYS" />
+              </rowConstraints>
+               <children>
+                  <ImageView fitHeight="171.0" fitWidth="168.0" pickOnBounds="true" preserveRatio="true" GridPane.columnSpan="2" GridPane.rowSpan="5">
+                     <image>
+                        <Image url="@../images/profile.png" />
+                     </image>
+                  </ImageView>
+                  <Label text="User Name:" GridPane.columnIndex="2" />
+                  <Label text="Full Name:" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <TextField prefHeight="25.0" prefWidth="300.0" GridPane.columnIndex="3" />
+                  <TextField prefHeight="25.0" prefWidth="291.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                  <Label text="State:" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                  <Label text="City:" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                  <Label text="Address:" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                  <TextArea prefHeight="70.0" prefWidth="287.0" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+                  <ComboBox prefHeight="25.0" prefWidth="288.0" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                  <ComboBox prefHeight="25.0" prefWidth="296.0" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                  <Label text="Zip code:" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+                  <TextField prefHeight="25.0" prefWidth="291.0" GridPane.columnIndex="3" GridPane.rowIndex="7" />
+                  <Label text="Phone Number:" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+                  <TextField prefHeight="25.0" prefWidth="291.0" GridPane.columnIndex="3" GridPane.rowIndex="8" />
+                  <Label text="Password:" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                  <Label text="Confirm Password:" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                  <PasswordField prefHeight="25.0" prefWidth="310.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                  <PasswordField prefHeight="25.0" prefWidth="310.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                  <HBox alignment="CENTER_RIGHT" prefHeight="28.0" prefWidth="285.0" GridPane.columnIndex="3" GridPane.rowIndex="9">
+                     <children>
+                        <Button mnemonicParsing="false" text="Register" />
+                     </children>
+                  </HBox>
+               </children>
+            </GridPane>
+         </children>
+      </GridPane>
+   </children>
+</StackPane>

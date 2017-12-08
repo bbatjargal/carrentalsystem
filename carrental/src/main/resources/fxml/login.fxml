@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Text?>
+
+<StackPane prefHeight="221.0" prefWidth="380.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mum.mpp.carrental.controller.LoginController">
+   <children>
+      <GridPane alignment="center" hgap="10" style="-fx-border-color: #000000;" vgap="10">
+        <padding>
+            <Insets bottom="10" left="25" right="25" top="25" />
+         </padding>
+         <children>
+           
+            <Text text="Welcome!" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="0" />
+
+            <Label text="User Name:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+
+            <TextField fx:id="txtUserName" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+            <Label text="Password:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+
+            <PasswordField fx:id="txtPassword" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="15.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <children>     
+                  <RadioButton fx:id="rbCustomer" mnemonicParsing="false" selected="true" text="Customer">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="asdf" />
+                     </toggleGroup></RadioButton>
+                  <RadioButton fx:id="rbAdmin" mnemonicParsing="false" text="Admin" toggleGroup="$asdf">
+                                  
+                    </RadioButton>
+               </children>
+            </HBox>
+            
+            <Text style="-fx-font-style: italic;" text="Try admin and pass." GridPane.columnIndex="0" GridPane.rowIndex="4" />   
+            <HBox alignment="bottom_right" spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="4">
+              <children>
+                  <Button onAction="#handleLogin" text="Login" />
+              </children>
+           </HBox>     
+            <Text fx:id="txtMessage" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="5" />      
+         </children>
+         <columnConstraints>
+            <ColumnConstraints />
+            <ColumnConstraints />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+         </rowConstraints>
+        
+      </GridPane>
+   </children>
+</StackPane>

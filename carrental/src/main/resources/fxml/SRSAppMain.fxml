@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.layout.HBox?>
+
+<BorderPane prefHeight="640.0" prefWidth="960.0" fx:controller="mum.mpp.carrental.controller.SRSAppMainController" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+   	<AnchorPane prefHeight="640.0" prefWidth="960.0">
+   		<children>
+ 			<BorderPane prefWidth="960.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+ 				<center>
+	 			<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="260.0" prefWidth="960.0">
+	               <children>
+	                  <Label layoutX="14.0" layoutY="14.0" text="Student Registration" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="5.0">
+	                     <font>
+	                        <Font size="16.0" />
+	                     </font>
+	                  </Label>
+	                  <GridPane hgap="10.0" layoutX="144.0" layoutY="229.0" vgap="2.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="26.0">
+	                    <columnConstraints>
+	                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="355.20001220703125" minWidth="10.0" prefWidth="106.39999389648438" />
+	                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="808.0" minWidth="10.0" prefWidth="803.6000061035156" />
+	                    </columnConstraints>
+	                    <rowConstraints>
+	                      	<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+	                      	<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+	                      	<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+	                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+	                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+	                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+	                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+	                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+	                    </rowConstraints>
+	                     <children>
+	                        <Label text="Student Number:" />
+	                        <TextField fx:id="txfldStudentNumber" text="" GridPane.columnIndex="1" />
+	                        <Label text="First Name:" GridPane.rowIndex="1" />
+	                        <TextField fx:id="txfldFirstName" text="" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+	                        <Label text="Last Name:" GridPane.rowIndex="2" />
+	                        <TextField fx:id="txfldLastName" text="" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+	                        <Label text="Email:" GridPane.rowIndex="3" />
+	                        <TextField fx:id="txfldEmail" text="" GridPane.columnIndex="1" GridPane.rowIndex="3" />	                        
+	                        <Label text="Street" GridPane.rowIndex="4" />
+	                        <TextField fx:id="txfldStreet" text="" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+	                        <Label text="City" GridPane.rowIndex="5" />
+	                        <TextField fx:id="txfldCity" text="" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+	                        <Label text="State" GridPane.rowIndex="6" />
+                            <ComboBox fx:id="cmboxState" prefHeight="25.0" prefWidth="430.0" promptText="Select State" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+	                        <Label text="Zip" GridPane.rowIndex="7" />
+	                        <TextField fx:id="txfldZipLabel" text="" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+	                        <Label text="Date of Admission:" GridPane.rowIndex="8" />
+                            <DatePicker fx:id="dtePickerAdmissionDate" prefHeight="25.0" prefWidth="430.0" promptText="Select a date" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                            <Text fx:id="messageText" GridPane.columnIndex="0" GridPane.rowIndex="9" />
+                            <ButtonBar prefHeight="40.0" prefWidth="254.0" GridPane.columnIndex="1" GridPane.rowIndex="9">
+	                    		<buttons>
+	                      			<Button mnemonicParsing="false" text="Register Student" onAction="#handleRegisterButtonAction" />
+	                        		<Button mnemonicParsing="false" text="Exit" onAction="#handleExitButtonAction" />
+	                    		</buttons>
+		                     <padding>
+		                        <Insets right="10.0" />
+		                     </padding>
+		                  </ButtonBar>
+	                     </children>
+	                     <padding>
+	                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+	                     </padding>
+	                  </GridPane>
+	               </children></AnchorPane>
+ 				</center>
+ 				<bottom>
+ 					<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="220.0" prefWidth="960.0">
+ 						<children>
+ 							<BorderPane id="borderPaneListView" prefWidth="960.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">  
+	                           <center><!--
+	                              <ListView id="listViewStudents" fx:id="listViewStudents" prefHeight="220.0" prefWidth="940.0" BorderPane.alignment="CENTER">
+	                                 <BorderPane.margin>
+	                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+	                                 </BorderPane.margin>
+	                              </ListView>-->	 
+	                           </center>                          
+ 							</BorderPane>
+ 						</children>
+ 					</AnchorPane>
+ 				</bottom>
+ 			</BorderPane>
+   		</children>
+   	</AnchorPane>
+   </center>
+   <bottom>
+   	<HBox>
+   		<Label text="MUM - Copyright 2017">
+   			<font>
+   				<Font size="10" />
+   			</font>
+   		</Label>
+		<padding>
+	    	<Insets bottom="5.0" left="10.0" right="10.0" top="10.0" />
+		</padding>
+   	</HBox>
+   </bottom>
+</BorderPane>

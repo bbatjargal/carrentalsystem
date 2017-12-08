@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="744.0" prefWidth="942.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mum.mpp.carrental.controller.CustomerController">
+   <children>
+      <GridPane layoutX="20.0" layoutY="20.0" prefHeight="337.0" prefWidth="534.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="297.0" minWidth="10.0" prefWidth="95.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="349.0" minWidth="10.0" prefWidth="349.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="44.0" minHeight="10.0" prefHeight="44.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="49.0" minHeight="10.0" prefHeight="42.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <TextField fx:id="txtUserName" GridPane.columnIndex="1" />
+            <Label text="User Name" />
+            <Label text="Password" GridPane.rowIndex="1" />
+            <PasswordField fx:id="txtPassword" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="txtCustomerName" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label text="Customer Name" GridPane.rowIndex="2" />
+            <TextField fx:id="txtStreet" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label text="Street" GridPane.rowIndex="3" />
+            <TextField fx:id="txtCity" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Label text="City" GridPane.rowIndex="4" />
+            <ComboBox fx:id="cboState" prefHeight="31.0" prefWidth="356.0" promptText="Select state" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <Label text="State" GridPane.rowIndex="5" />
+            <TextField fx:id="txtZip" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <Label text="Zip" GridPane.rowIndex="6" />
+            <Label text="Country" GridPane.rowIndex="7" />
+            <ComboBox fx:id="cboCountry" prefHeight="31.0" prefWidth="351.0" promptText="Select country" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+            <TextField fx:id="txtPhoneNumber" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+            <Label text="Phone Number" GridPane.rowIndex="8" />
+         </children>
+      </GridPane>
+      <ImageView fx:id="imgCustomerPhoto" fitHeight="306.0" fitWidth="347.0" layoutX="565.0" layoutY="20.0" pickOnBounds="true">
+         <image>
+            <Image url="@../images/profile.png" />
+         </image>
+      </ImageView>
+      <TableView fx:id="tblViewCustomerRentals" layoutX="20.0" layoutY="391.0" prefHeight="337.0" prefWidth="902.0">
+        <columns>
+          <TableColumn prefWidth="116.0" text="Car License No">
+          	<cellValueFactory>
+          		<PropertyValueFactory property="carLicenseNumber" />
+          	</cellValueFactory>
+          </TableColumn>
+          <TableColumn minWidth="3.0" prefWidth="73.0" text="Color">
+          	<cellValueFactory>
+          		<PropertyValueFactory property="carColor" />
+          	</cellValueFactory>
+          </TableColumn>
+          <TableColumn minWidth="3.0" prefWidth="138.0" text="Rent Date">
+          	<cellValueFactory>
+          		<PropertyValueFactory property="rentDate" />
+          	</cellValueFactory>
+          </TableColumn>
+          <TableColumn minWidth="3.0" prefWidth="165.0" text="Expected Return Date">
+            <cellValueFactory>
+          		<PropertyValueFactory property="expectedReturnDate" />
+          	</cellValueFactory>
+          </TableColumn>
+          <TableColumn minWidth="0.0" prefWidth="140.0" text="Return Date">
+            <cellValueFactory>
+          		<PropertyValueFactory property="returnDate" />
+          	</cellValueFactory>
+          </TableColumn>
+          <TableColumn minWidth="0.0" prefWidth="150.0" text="Expected Rent Cost">
+            <cellValueFactory>
+          		<PropertyValueFactory property="expectedRentCost" />
+          	</cellValueFactory>
+          </TableColumn>
+          <TableColumn minWidth="0.0" prefWidth="128.0" text="Penalty Cost">
+            <cellValueFactory>
+          		<PropertyValueFactory property="penaltyCost" />
+          	</cellValueFactory>
+          </TableColumn>
+        </columns>
+      </TableView>
+      <Button fx:id="btnUpdate" layoutX="485.0" layoutY="342.0" mnemonicParsing="false" onAction="#handleUpdateCustomer" text="Update" />
+      <Text fx:id="messageText" layoutX="19.0" layoutY="363.0" />
+   </children>
+</AnchorPane>

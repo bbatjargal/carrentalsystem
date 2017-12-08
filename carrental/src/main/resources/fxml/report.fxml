@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+
+<StackPane prefHeight="537.0" prefWidth="735.0" 
+ fx:controller="mum.mpp.carrental.controller.ReportController" 
+ xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <GridPane>
+        <columnConstraints>
+            <ColumnConstraints hgrow="NEVER" maxWidth="30.0" minWidth="30.0" prefWidth="30.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="NEVER" maxWidth="30.0" minWidth="30.0" prefWidth="30.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="NEVER" />
+          <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="NEVER" />
+          <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="NEVER" />
+          <RowConstraints maxHeight="464.0" minHeight="10.0" prefHeight="384.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="NEVER" />
+        </rowConstraints>
+         <StackPane.margin>
+            <Insets top="20.0" />
+         </StackPane.margin>
+         <children>
+            <Label layoutX="14.0" layoutY="14.0" text="Report" GridPane.columnIndex="1" GridPane.rowIndex="1" 
+            AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="5.0" style="-fx-font-weight: bold">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Button mnemonicParsing="false" text="Search" onAction="#handleSearch"
+            GridPane.columnIndex="3" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets left="15.0" />
+               </GridPane.margin>
+            </Button>
+            <TableView fx:id="tblReport" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="3">
+               <columnResizePolicy><TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/></columnResizePolicy>
+              <columns>
+                <TableColumn prefWidth="75.0" text="Car License Number" >
+                 	<cellValueFactory>
+		                <PropertyValueFactory property="carLicenseNumber" />
+		            </cellValueFactory>
+		          </TableColumn>
+                  <TableColumn prefWidth="87.0" text="Car Color" >
+                 	<cellValueFactory>
+		                <PropertyValueFactory property="carColor" />
+		            </cellValueFactory>
+		          </TableColumn>
+                  <TableColumn prefWidth="92.0" text="Rentee's Name" >
+                 	<cellValueFactory>
+		                <PropertyValueFactory property="customerName" />
+		            </cellValueFactory>
+		          </TableColumn>
+                  <TableColumn prefWidth="95.0" text="Rent Date" >
+                 	<cellValueFactory>
+		                <PropertyValueFactory property="rentDate" />
+		            </cellValueFactory>
+		          </TableColumn>
+                  <TableColumn prefWidth="92.0" text="Return Date" >
+                 	<cellValueFactory>
+		                <PropertyValueFactory property="returnDate" />
+		            </cellValueFactory>
+		          </TableColumn>
+                  <TableColumn prefWidth="92.0" text="Income" >
+                 	<cellValueFactory>
+		                <PropertyValueFactory property="totalRentCost" />
+		            </cellValueFactory>
+		          </TableColumn>
+              </columns>
+            </TableView>
+            <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="4">
+               <children>
+                  <Button mnemonicParsing="false" text="Print"  onAction="#handlePrint" />
+               </children>
+            </HBox>
+            <DatePicker fx:id="dpBeginDate" prefHeight="25.0" prefWidth="235.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <DatePicker fx:id="dpEndDate" prefHeight="25.0" prefWidth="212.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="4">
+               <children>
+                  <Label text="Total Income:" />
+                  <Text fx:id="txtTotalIncome" text="---" />
+               </children>
+            </HBox>
+            <Text fx:id="messageText" GridPane.columnIndex="1" GridPane.rowIndex="5"></Text>
+         </children>
+      </GridPane>
+   </children>
+</StackPane>

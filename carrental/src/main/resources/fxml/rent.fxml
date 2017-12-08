@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+
+<StackPane prefHeight="537.0" prefWidth="735.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mum.mpp.carrental.controller.RentController">
+   <children>
+      <GridPane>
+        <columnConstraints>
+            <ColumnConstraints hgrow="NEVER" maxWidth="30.0" minWidth="30.0" prefWidth="30.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="NEVER" maxWidth="30.0" minWidth="30.0" prefWidth="30.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="NEVER" />
+          <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="NEVER" />
+          <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="NEVER" />
+          <RowConstraints maxHeight="464.0" minHeight="10.0" prefHeight="384.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="NEVER" />
+        </rowConstraints>
+         <StackPane.margin>
+            <Insets top="20.0" />
+         </StackPane.margin>
+         <children>
+            <Label text="Rents" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Button mnemonicParsing="false" text="Search" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets left="15.0" />
+               </GridPane.margin>
+            </Button>
+            <TableView fx:id="tblRent" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="3">
+              <columns>
+                <TableColumn prefWidth="75.0" text="Rental ID" >
+	                <cellValueFactory>
+		                <PropertyValueFactory property="carRentalId" />
+		            </cellValueFactory>
+		        </TableColumn>
+                <TableColumn prefWidth="87.0" text="Rent Date">
+	                <cellValueFactory>
+		                <PropertyValueFactory property="rentDate" />
+		            </cellValueFactory>
+	            </TableColumn>
+                 <TableColumn prefWidth="87.0" text="Return Date" >
+                 	<cellValueFactory>
+		                <PropertyValueFactory property="returnDate" />
+		            </cellValueFactory>
+                 </TableColumn>
+                 <TableColumn prefWidth="95.0" text="Penalty Cost" >
+                 	<cellValueFactory>
+		                <PropertyValueFactory property="penaltyCost" />
+		            </cellValueFactory>
+                 </TableColumn>
+              </columns>
+            </TableView>
+            <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="4">
+               <children>
+                  <Button mnemonicParsing="false" text="Register Return" />
+               </children>
+            </HBox>
+         </children>
+      </GridPane>
+   </children>
+</StackPane>
